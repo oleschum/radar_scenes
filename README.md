@@ -14,7 +14,7 @@ recommended method.
 
 The alternative is to clone this repository and manually install the package using the `setup.py`.
 
-###Virtual Environment
+### Virtual Environment
 It is *highly recommended* to install the package in its own virtual environment. To do so, create a virtual environment 
 prior to installation of the package:
 
@@ -38,7 +38,7 @@ You do not have to clone this repository for the installation.
 
 There are multiple guides available which give more information about virtual environments and installation of python
 packages, e.g. on [python.org](https://packaging.python.org/guides/installing-using-pip-and-virtual-environments/).
-###System wide installation
+### System wide installation
 If no virtual environment is desired (again, this is __discouraged__!) , the package can be installed using the global version of `pip`
 ```
 pip3 install --user radar_scenes
@@ -48,15 +48,15 @@ The flag `--user` can be omitted if a system wide installation is desired (may r
 
 
 
-##Citation
+## Citation
 Please refer to www.radar-scenes.com to get instructions on how to cite the data set. 
 
 
-##Usage
+## Usage
 
 After successful installation, the `radar_scenes` package is available in your python environment.
 
-###Radar Data Viewer
+### Radar Data Viewer
 During installation, the command `rad_viewer` is made available. If you have installed the package into a virtual
 environment, this command is only available while the virtual environment is active.
 
