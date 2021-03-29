@@ -70,6 +70,8 @@ class MainWindow(QtWidgets.QMainWindow):
         QtWidgets.QMainWindow.__init__(self)
         self.create_ui()
 
+        self.setWindowIcon(QtGui.QIcon("res/icon.png"))
+
         self.showMaximized()
         self.sequence = None
         self.current_cam_filename = None
