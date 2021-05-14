@@ -1046,7 +1046,8 @@ def main():
     args = parser.parse_args()
     app = QtWidgets.QApplication([])
     app.setStyleSheet(qdarkstyle.load_stylesheet(qt_api='pyside2'))
-
+    app.setWindowIcon(QtGui.QIcon("res/icon.png"))
+    
     window = MainWindow()
     window.show()
 
