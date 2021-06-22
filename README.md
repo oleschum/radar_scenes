@@ -45,6 +45,21 @@ pip3 install --user radar_scenes
 ```
 The flag `--user` can be omitted if a system wide installation is desired (may require root privileges).
 
+### Windows Setup Hints
+When getting error message  
+*"qt.qpa.plugin: Could not load the Qt platform plugin "windows" in "" even though it was found.
+This application failed to start because no Qt platform plugin could be initialized. Reinstalling the application may fix this problem."*  
+don't give up. Instead, you should try this:
+
+- set an additional environment variable pointing to your anaconda plugins directory
+(e.g. *set QT_PLUGIN_PATH=<anaconda3-directory>\Library\plugins*)
+- copy the right dlls into the directory above - hint taken from [LINK](https://stackoverflow.com/questions/41994485/how-to-fix-could-not-find-or-load-the-qt-platform-plugin-windows-while-using-m):
+  - copy the following files ...
+    - \Anaconda3\Lib\site-packages\PySide2\plugins\platforms\qminimal.dll
+    - \Anaconda3\Lib\site-packages\PySide2\plugins\platforms\qoffscreen.dll
+    - \Anaconda3\Lib\site-packages\PySide2\plugins\platforms\qwindows.dll  
+    to:
+    - \Anaconda3\Library\plugins\platforms
 
 
 
