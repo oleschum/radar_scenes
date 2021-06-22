@@ -52,14 +52,14 @@ This application failed to start because no Qt platform plugin could be initiali
 don't give up. Instead, you should try this:
 
 - set an additional environment variable pointing to your anaconda plugins directory
-(e.g. *set QT_PLUGIN_PATH=c:\util\anaconda3\Library\plugins*)
-- copy the right dlls into the directory above - hint taken from LINK:
-- copy the following files ...
-  - \Anaconda3\Lib\site-packages\PySide2\plugins\platforms\qminimal.dll
-  - \Anaconda3\Lib\site-packages\PySide2\plugins\platforms\qoffscreen.dll
-  - \Anaconda3\Lib\site-packages\PySide2\plugins\platforms\qwindows.dll  
-  to:
-  - \Anaconda3\Library\plugins\platforms
+(e.g. *set QT_PLUGIN_PATH=<anaconda3-directory>\Library\plugins*)
+- copy the right dlls into the directory above - hint taken from [LINK](https://stackoverflow.com/questions/41994485/how-to-fix-could-not-find-or-load-the-qt-platform-plugin-windows-while-using-m):
+  - copy the following files ...
+    - \Anaconda3\Lib\site-packages\PySide2\plugins\platforms\qminimal.dll
+    - \Anaconda3\Lib\site-packages\PySide2\plugins\platforms\qoffscreen.dll
+    - \Anaconda3\Lib\site-packages\PySide2\plugins\platforms\qwindows.dll  
+    to:
+    - \Anaconda3\Library\plugins\platforms
 
 
 
