@@ -423,7 +423,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.load_sequence(filename)
 
     def on_sequence_loading_finished(self, sequence, timestamps):
-        QtGui.QApplication.restoreOverrideCursor()
+        QtWidgets.QApplication.restoreOverrideCursor()
         self.sequence = sequence
         self.timestamps = timestamps
         self.color_by_list.setCurrentIndex(6)
@@ -441,7 +441,7 @@ class MainWindow(QtWidgets.QMainWindow):
         Resets the cursor and prints and error box.
         :return:
         """
-        QtGui.QApplication.restoreOverrideCursor()
+        QtWidgets.QApplication.restoreOverrideCursor()
         msg_box = QtWidgets.QMessageBox()
         msg_box.setIcon(QtWidgets.QMessageBox.Critical)
         msg_box.setText("Unable to open file.")
@@ -471,7 +471,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.loader_worker.finished.connect(self.thread.quit)
         self.thread.started.connect(self.loader_worker.load)
         self.thread.start()
-        QtGui.QApplication.setOverrideCursor(QtCore.Qt.WaitCursor)
+        QtWidgets.QApplication.setOverrideCursor(QtCore.Qt.WaitCursor)
 
     def generate_colors_true_tracks(self):
         """
