@@ -11,7 +11,7 @@ verstr = res.group(1)
 
 install_requires = [
     "Pillow>=8.1.0",
-    "PySide2>=5.15.2",
+    "PySide6>=6.2.2",
     "QDarkStyle>=2.8.1",
     "h5py>=3.1.0",
     "matplotlib>=3.3.3, <3.4.0", # restricted to allow usage with python 3.6

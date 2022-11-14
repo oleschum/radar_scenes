@@ -2,7 +2,7 @@ import json
 import os
 import sys
 import argparse
-from PySide2 import QtCore, QtWidgets, QtGui
+from PySide6 import QtCore, QtWidgets, QtGui
 import pyqtgraph as pg
 import qdarkstyle
 import numpy as np
@@ -199,7 +199,6 @@ class MainWindow(QtWidgets.QMainWindow):
         self.cam_viewbox = self.cam_graphics_layout.addViewBox()
         self.cam_viewbox.setAspectLocked(True)
         self.camera_widget = pg.ImageItem()
-        self.camera_widget.rotate(-90)
         self.cam_viewbox.addItem(self.camera_widget)
         self.camera_dock = QtWidgets.QDockWidget("Camera", self)
         self.camera_dock.setMinimumWidth(300)
@@ -271,17 +270,17 @@ class MainWindow(QtWidgets.QMainWindow):
         self.view_menu.addAction(self.camera_dock.toggleViewAction())
 
         ## Exit QAction
-        exit_action = QtWidgets.QAction("Exit", self)
+        exit_action = QtGui.QAction("Exit", self)
         exit_action.setShortcut(QtGui.QKeySequence.Quit)
         exit_action.triggered.connect(self.close)
 
         # Open Sequence Action
-        self.open_action = QtWidgets.QAction("Open Sequence", self)
+        self.open_action = QtGui.QAction("Open Sequence", self)
         self.open_action.setShortcut(QtGui.QKeySequence.Open)
         self.open_action.triggered.connect(self.open_sequence)
 
         # Open Predictions Action
-        self.open_pred_action = QtWidgets.QAction("Open Predictions", self)
+        self.open_pred_action = QtGui.QAction("Open Predictions", self)
         self.open_pred_action.triggered.connect(self.open_predictions)
 
         self.file_menu.addAction(self.open_action)
@@ -554,7 +553,7 @@ class MainWindow(QtWidgets.QMainWindow):
         if cam_filename != self.current_cam_filename:
             # update the image only, when a new file would be loaded.
             image = plt.imread(cam_filename)
-            self.camera_widget.setImage(image)
+            self.camera_widget.setImage(np.rot90(np.asarray(image), -1))
             self.current_cam_filename = cam_filename
 
     def trafo_radar_data_world_to_car(self, scene, other_scenes) -> np.ndarray:
@@ -1045,7 +1044,7 @@ def main():
 
     args = parser.parse_args()
     app = QtWidgets.QApplication([])
-    app.setStyleSheet(qdarkstyle.load_stylesheet(qt_api='pyside2'))
+    app.setStyleSheet(qdarkstyle.load_stylesheet(qt_api='pyside6'))
     app.setWindowIcon(QtGui.QIcon("res/icon.png"))
     
     window = MainWindow()
