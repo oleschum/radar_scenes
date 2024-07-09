@@ -9,7 +9,7 @@ Among others, the package contains a viewer for the radar data and camera images
 
 ## Installation
 
-The package is designed for Python versions `>=3.6` and can be installed using `pip`. Installation using `pip` is the
+The package is designed for Python versions `>=3.9` and can be installed using `pip`. Installation using `pip` is the
 recommended method. 
 
 The alternative is to clone this repository and manually install the package using the `setup.py`.

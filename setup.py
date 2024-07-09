@@ -14,11 +14,11 @@ install_requires = [
     "PySide6>=6.2.2",
     "QDarkStyle>=2.8.1",
     "h5py>=3.1.0",
-    "matplotlib>=3.3.3, <3.4.0", # restricted to allow usage with python 3.6
-    "numpy>=1.19.4, <1.20.0",  # restricted to allow usage with python 3.6
+    "matplotlib>=3.3.3",
+    "numpy>=1.19.4",
     "pip>=19.0.3",
     "pyqtgraph>=0.11.1",
-    "scipy>=1.5.4, <1.6.0",  # restricted to allow usage with python 3.6
+    "scipy>=1.5.4",
     "setuptools>=40.8.0"
 ]
 
@@ -51,5 +51,5 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6',
+    python_requires='>=3.9',
 )
